@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ek Baat Kahoon? ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- ======================================
+         BACKGROUND
+    ======================================= -->
+
+    <div class="background">
+
+        <div class="moon"></div>
+
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+
+        <div class="stars"></div>
+
+        <div class="shooting-star shooting-star-1"></div>
+        <div class="shooting-star shooting-star-2"></div>
+
+    </div>
+
+
+    <!-- ======================================
+         FLOATING DECORATIONS
+    ======================================= -->
+
+    <div class="floating-heart heart-1">♡</div>
+    <div class="floating-heart heart-2">♡</div>
+    <div class="floating-heart heart-3">♥</div>
+    <div class="floating-heart heart-4">♡</div>
+
+    <div class="paw paw-1">🐾</div>
+    <div class="paw paw-2">🐾</div>
+    <div class="paw paw-3">🐾</div>
+
+
+    <!-- ======================================
+         TOP HEADER
+    ======================================= -->
+
+    <header class="top-header">
+
+        <div class="site-title">
+            Ek Baat Kahoon? <span>♡</span>
+        </div>
+
+        <div class="progress">
+
+            <span id="pageNumber">01</span>
+
+            <div class="progress-line">
+                <div id="progressFill"></div>
+            </div>
+
+            <span>08</span>
+
+            <span class="header-heart">♥</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================
+         MAIN CONTENT
+    ======================================= -->
+
+    <main class="story">
+
+
+        <!-- ==================================
+             SCREEN 1
+        =================================== -->
+
+        <section class="screen active" id="screen1">
+
+            <div class="css-cat cat-one">
+    <div class="cat-eyes"></div>
+    <div class="cat-nose"></div>
+    <div class="cat-mouth"></div>
+    <div class="cat-whiskers"></div>
+    <div class="cat-heart">♥</div>
+</div>
+
+<div class="css-cat cat-two">
+    <div class="cat-eyes"></div>
+    <div class="cat-nose"></div>
+    <div class="cat-mouth"></div>
+    <div class="cat-whiskers"></div>
+</div>
+
+
+            <div class="glass-card">
+
+                <p class="label">
+                    just one thing...
+                </p>
+
+                <h1>
+                    Ek baat kahoon?
+                </h1>
+
+                <div class="tiny-heart">♡</div>
+
+                <p class="message">
+                    Is baar sirf ek baar.<br>
+                    Promise. :)
+                </p>
+
+                <button class="main-btn" onclick="nextScreen(2)">
+                    Sunoge? <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="sleeping-cat">
+                🐈
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 2
+        =================================== -->
+
+        <section class="screen" id="screen2">
+
+            <div class="cat-window">
+                🐱
+            </div>
+
+            <div class="glass-card">
+
+                <p class="label">
+                    ek sawaal hai...
+                </p>
+
+                <h1>
+                    Tumhe pata hai?
+                </h1>
+
+                <div class="tiny-heart">
+                    ♡
+                </div>
+
+                <p class="message">
+                    Main tumhe woh baat<br>
+                    baar-baar kyun bolta hoon?
+                </p>
+
+                <div class="choice-buttons">
+
+                    <button class="choice-btn" onclick="chooseReason('know')">
+                        ♥ Haan, pata hai
+                    </button>
+
+                    <button class="choice-btn" onclick="chooseReason('tell')">
+                        ♥ Nahi, batao
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 3
+        =================================== -->
+
+        <section class="screen" id="screen3">
+
+            <div class="cat-side">
+                🐱
+            </div>
+
+            <div class="glass-card">
+
+                <p class="label" id="reasonLabel">
+                    the real reason
+                </p>
+
+                <h1 id="reasonTitle">
+                    Kyunki...
+                </h1>
+
+                <div class="tiny-heart">
+                    ♥
+                </div>
+
+                <p class="message" id="reasonText">
+                    Mujhe tumhari fikr hai.
+                </p>
+
+                <button class="main-btn" onclick="nextScreen(4)">
+                    Aage... <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 4
+        =================================== -->
+
+        <section class="screen" id="screen4">
+
+            <div class="floating-cat">
+                🐈
+            </div>
+
+            <div class="glass-card">
+
+                <p class="label">
+                    toh suno...
+                </p>
+
+                <h1>
+                    Kyunki mujhe<br>
+                    tumhari fikr hai.
+                </h1>
+
+                <div class="tiny-heart">
+                    ♥
+                </div>
+
+                <p class="message">
+                    Tum mere liye important ho.<br>
+                    Isliye kabhi-kabhi main thoda<br>
+                    zyada care kar leta hoon.
+                </p>
+
+                <button class="main-btn" onclick="nextScreen(5)">
+                    Aage... <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 5
+        =================================== -->
+
+        <section class="screen" id="screen5">
+
+            <div class="sleeping-cat-large">
+                🐈
+            </div>
+
+            <div class="glass-card">
+
+                <p class="label">
+                    maybe I overdid it...
+                </p>
+
+                <h1>
+                    Main thoda<br>
+                    zyada bol gaya.
+                </h1>
+
+                <div class="tiny-heart">
+                    ♡
+                </div>
+
+                <p class="message">
+                    Kabhi-kabhi isi fikr mein<br>
+                    main ek hi baat baar-baar<br>
+                    bol deta hoon.
+                </p>
+
+                <button class="main-btn" onclick="nextScreen(6)">
+                    Ek last baat <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 6
+        =================================== -->
+
+        <section class="screen" id="screen6">
+
+    <!-- Animated Sorry Words -->
+    <div class="sorry-word sorry-1">SORRY ♡</div>
+    <div class="sorry-word sorry-2">sorry...</div>
+    <div class="sorry-word sorry-3">I'M SORRY 🥺</div>
+    <div class="sorry-word sorry-4">sorry ♡</div>
+    <div class="sorry-word sorry-5">SORRY</div>
+    <div class="sorry-word sorry-6">🥺 sorry</div>
+    <div class="sorry-word sorry-7">sorry my billi ♡</div>
+    <div class="sorry-word sorry-8">SORRY ♡</div>
+
+    <!-- Cute Cats -->
+    <div class="css-cat sorry-cat cat-three">
+        <div class="cat-eyes"></div>
+        <div class="cat-nose"></div>
+        <div class="cat-mouth"></div>
+        <div class="cat-whiskers"></div>
+    </div>
+
+    <div class="css-cat sorry-cat cat-four">
+        <div class="cat-eyes"></div>
+        <div class="cat-nose"></div>
+        <div class="cat-mouth"></div>
+        <div class="cat-whiskers"></div>
+        <div class="cat-heart">♥</div>
+    </div>
+
+    <!-- Main Sorry Card -->
+    <div class="card sorry-card">
+
+        <div class="eyebrow">
+            this one is from my heart ♡
+        </div>
+
+        <div class="sorry-icon">
+            🥺
+        </div>
+
+        <h1>
+            I’m sorry.
+            <span>♡</span>
+        </h1>
+
+        <p>
+            Mera tumhe irritate karne ka kabhi koi intention nahi tha.
+            <br><br>
+            Main bas tumhari care karta hoon...
+            shayad thoda zyada. 🥺
+        </p>
+
+        <div class="sorry-line">
+            <span>♡</span>
+            I really mean it
+            <span>♡</span>
+        </div>
+
+        <button class="main-btn" onclick="nextScreen(7)">
+            Ek promise → 
+        </button>
+
+    </div>
+
+</section>
+        <!-- ==================================
+             SCREEN 7
+        =================================== -->
+
+        <section class="screen" id="screen7">
+
+            <div class="cat-family">
+
+                <span>🐈</span>
+                <span>🐱</span>
+                <span>🐈</span>
+
+            </div>
+
+            <div class="glass-card">
+
+                <p class="label">
+                    one promise
+                </p>
+
+                <h1>
+                    Next time...
+                </h1>
+
+                <div class="tiny-heart">
+                    ♥
+                </div>
+
+                <p class="message">
+                    Main ek baar bolunga.<br>
+                    Tum samajh jaoge.<br>
+                    Aur phir main chup. 🤐
+                </p>
+
+                <button class="main-btn" onclick="nextScreen(8)">
+                    Promise. 🤝
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             SCREEN 8 — FINAL
+        =================================== -->
+
+        <section class="screen" id="screen8">
+
+    <!-- Floating hearts -->
+    <div class="love-spark spark-1">♥</div>
+    <div class="love-spark spark-2">♡</div>
+    <div class="love-spark spark-3">♥</div>
+    <div class="love-spark spark-4">♡</div>
+    <div class="love-spark spark-5">♥</div>
+    <div class="love-spark spark-6">♡</div>
+
+    <!-- Cute Cats -->
+    <div class="css-cat final-cat final-cat-left">
+        <div class="cat-eyes"></div>
+        <div class="cat-nose"></div>
+        <div class="cat-mouth"></div>
+        <div class="cat-whiskers"></div>
+        <div class="cat-heart">♥</div>
+    </div>
+
+    <div class="css-cat final-cat final-cat-right">
+        <div class="cat-eyes"></div>
+        <div class="cat-nose"></div>
+        <div class="cat-mouth"></div>
+        <div class="cat-whiskers"></div>
+    </div>
+
+    <div class="css-cat final-cat final-cat-small">
+        <div class="cat-eyes"></div>
+        <div class="cat-nose"></div>
+        <div class="cat-mouth"></div>
+        <div class="cat-whiskers"></div>
+    </div>
+
+    <!-- Final Card -->
+    <div class="card final-card">
+
+        <div class="eyebrow">
+            that’s really all ♡
+        </div>
+
+        <div class="final-paw">
+            🐾
+        </div>
+
+        <h1 class="final-heading">
+            Bas itna hi.
+            <span>♡</span>
+        </h1>
+
+        <p class="final-text">
+            Main tumhe irritate nahi karna chahta tha.
+            <br>
+            Bas tumhari care karta hoon...
+            <br>
+            aur tumse bahut pyaar karta hoon. ❤️
+        </p>
+
+        <!-- Main Love Message -->
+        <div class="love-message">
+            <span>I love you</span>
+            <strong>my billi ♡</strong>
+        </div>
+
+        <div class="final-cats-text">
+            🐱 &nbsp; 🐱 &nbsp; 🐱
+        </div>
+
+        <button class="main-btn end-btn" onclick="finalAnimation()">
+            ♥ The End
+        </button>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- ======================================
+         JAVASCRIPT
+    ======================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2349 @@
+/* =========================================================
+   EK BAAT KAHOON?
+   ROMANTIC NIGHT SKY DESIGN
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #080b25;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #252052 0%,
+            #121735 38%,
+            #080b25 75%,
+            #050619 100%
+        );
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 214, 170, 0.8) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.65) 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 192, 213, 0.65) 1px, transparent 2px);
+
+    background-size:
+        130px 150px,
+        190px 210px,
+        250px 220px,
+        170px 260px;
+
+    background-position:
+        10px 20px,
+        80px 50px,
+        30px 100px,
+        120px 20px;
+
+    opacity: 0.8;
+    animation: starsMove 20s linear infinite;
+}
+
+.stars::before {
+    background-image:
+        radial-gradient(circle, #fff 1px, transparent 2px),
+        radial-gradient(circle, #ffd8a8 1px, transparent 2px);
+
+    background-size:
+        170px 190px,
+        280px 250px;
+
+    opacity: 0.5;
+    animation: starsTwinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes starsTwinkle {
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.moon {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 9%;
+    top: 12%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff7db,
+            #ffe8b2 45%,
+            #ffd98e 75%,
+            #ffc978
+        );
+
+    box-shadow:
+        0 0 30px rgba(255, 220, 155, 0.5),
+        0 0 80px rgba(255, 196, 125, 0.3),
+        0 0 150px rgba(255, 190, 130, 0.15);
+
+    animation: moonGlow 5s ease-in-out infinite alternate;
+}
+
+.moon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    top: 35px;
+    left: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(210, 167, 105, 0.18);
+
+    box-shadow:
+        45px 25px 0 rgba(210, 167, 105, 0.13),
+        65px 70px 0 rgba(210, 167, 105, 0.15),
+        20px 100px 0 rgba(210, 167, 105, 0.1);
+}
+
+@keyframes moonGlow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =========================================================
+   CLOUDS
+========================================================= */
+
+.cloud {
+    position: absolute;
+
+    width: 300px;
+    height: 90px;
+
+    border-radius: 100px;
+
+    background: rgba(132, 101, 157, 0.2);
+
+    filter: blur(10px);
+
+    opacity: 0.7;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: inherit;
+}
+
+.cloud::before {
+    width: 130px;
+    height: 130px;
+    left: 45px;
+    bottom: 10px;
+}
+
+.cloud::after {
+    width: 100px;
+    height: 100px;
+    right: 40px;
+    bottom: 5px;
+}
+
+.cloud-1 {
+    left: -100px;
+    top: 24%;
+    animation: cloudMove 35s linear infinite;
+}
+
+.cloud-2 {
+    right: -150px;
+    top: 45%;
+    transform: scale(0.8);
+    animation: cloudMoveReverse 40s linear infinite;
+}
+
+.cloud-3 {
+    left: 20%;
+    bottom: -40px;
+    transform: scale(0.7);
+    opacity: 0.35;
+}
+
+@keyframes cloudMove {
+    from {
+        transform: translateX(-50px);
+    }
+
+    to {
+        transform: translateX(120px);
+    }
+}
+
+@keyframes cloudMoveReverse {
+    from {
+        transform: translateX(70px);
+    }
+
+    to {
+        transform: translateX(-100px);
+    }
+}
+
+
+/* =========================================================
+   SHOOTING STARS
+========================================================= */
+
+.shooting-star {
+    position: absolute;
+
+    width: 90px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 222, 180, 0.9),
+        transparent
+    );
+
+    transform: rotate(-35deg);
+
+    opacity: 0;
+
+    animation: shooting 7s linear infinite;
+}
+
+.shooting-star-1 {
+    top: 22%;
+    left: 30%;
+}
+
+.shooting-star-2 {
+    top: 55%;
+    left: 70%;
+    animation-delay: 3s;
+}
+
+@keyframes shooting {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+        transform: translate(180px, 130px) rotate(-35deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top-header {
+    position: fixed;
+
+    top: 25px;
+    left: 35px;
+    right: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 20;
+}
+
+.site-title {
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+
+    color: #ffe4d6;
+
+    text-shadow:
+        0 0 15px rgba(255, 180, 190, 0.25);
+}
+
+.site-title span {
+    color: #ff9eb5;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #f9dcd3;
+}
+
+.progress-line {
+    width: 110px;
+    height: 1px;
+
+    background: rgba(255, 225, 210, 0.35);
+
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 12.5%;
+    height: 100%;
+
+    background: #ffd6c4;
+
+    transition: width 0.6s ease;
+}
+
+.header-heart {
+    font-size: 18px;
+    color: #ffd8cf;
+}
+
+
+/* =========================================================
+   STORY AREA
+========================================================= */
+
+.story {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   SCREENS
+========================================================= */
+
+.screen {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 100px 25px 40px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass-card {
+    position: relative;
+
+    width: min(650px, 90vw);
+
+    min-height: 390px;
+
+    padding: 55px 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(45, 33, 67, 0.72),
+            rgba(17, 18, 45, 0.68)
+        );
+
+    border: 1px solid rgba(255, 210, 196, 0.35);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        inset 0 0 50px rgba(255, 170, 190, 0.035);
+
+    overflow: hidden;
+
+    animation: cardGlow 4s ease-in-out infinite alternate;
+}
+
+.glass-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 29px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 30%,
+            transparent 70%,
+            rgba(255, 160, 190, 0.05)
+        );
+}
+
+.glass-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    top: -180px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 166, 181, 0.08);
+
+    filter: blur(30px);
+}
+
+@keyframes cardGlow {
+
+    from {
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            0 0 20px rgba(255, 180, 190, 0.04);
+    }
+
+    to {
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            0 0 45px rgba(255, 180, 190, 0.08);
+    }
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.label {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: lowercase;
+
+    color: #e8c7c5;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+h1 {
+    position: relative;
+    z-index: 2;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(48px, 7vw, 76px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: #ffe5dc;
+
+    text-shadow:
+        0 0 20px rgba(255, 184, 190, 0.15);
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TINY HEART
+========================================================= */
+
+.tiny-heart {
+    position: relative;
+    z-index: 2;
+
+    margin: 2px 0 16px;
+
+    font-size: 18px;
+
+    color: #ff9eb5;
+
+    animation: heartBeat 2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+    position: relative;
+    z-index: 2;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    font-weight: 300;
+
+    color: #eadbdd;
+
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.main-btn {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 30px;
+
+    padding: 13px 30px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255, 202, 190, 0.65);
+
+    background: rgba(31, 23, 48, 0.6);
+
+    color: #ffe4d8;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(255, 170, 180, 0.05);
+}
+
+.main-btn span {
+    margin-left: 8px;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 151, 174, 0.14);
+
+    box-shadow:
+        0 8px 30px rgba(255, 160, 180, 0.15),
+        0 0 25px rgba(255, 160, 180, 0.1);
+}
+
+.main-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   CHOICE BUTTONS
+========================================================= */
+
+.choice-buttons {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.choice-btn {
+    padding: 13px 24px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255, 205, 194, 0.5);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #ffe4d8;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.choice-btn:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 150, 175, 0.13);
+
+    border-color: rgba(255, 190, 190, 0.9);
+
+    box-shadow:
+        0 8px 25px rgba(255, 150, 170, 0.12);
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+.floating-heart {
+    position: fixed;
+
+    z-index: 3;
+
+    color: #ff9eb5;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 15px rgba(255, 130, 160, 0.5);
+
+    animation: floatHeart 5s ease-in-out infinite;
+}
+
+.heart-1 {
+    left: 12%;
+    top: 28%;
+}
+
+.heart-2 {
+    right: 13%;
+    top: 35%;
+
+    animation-delay: 1s;
+}
+
+.heart-3 {
+    left: 8%;
+    bottom: 22%;
+
+    animation-delay: 2s;
+
+    font-size: 17px;
+}
+
+.heart-4 {
+    right: 8%;
+    bottom: 27%;
+
+    animation-delay: 3s;
+
+    font-size: 20px;
+}
+
+@keyframes floatHeart {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   PAWS
+========================================================= */
+
+.paw {
+    position: fixed;
+
+    z-index: 4;
+
+    font-size: 18px;
+
+    opacity: 0.5;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(255, 170, 190, 0.4)
+        );
+
+    animation: pawFloat 4s ease-in-out infinite;
+}
+
+.paw-1 {
+    top: 42%;
+    left: 17%;
+}
+
+.paw-2 {
+    top: 63%;
+    right: 17%;
+
+    animation-delay: 1.5s;
+}
+
+.paw-3 {
+    bottom: 15%;
+    left: 25%;
+
+    animation-delay: 2.5s;
+}
+
+@keyframes pawFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   CATS
+========================================================= */
+
+.cat,
+.cat-window,
+.cat-side,
+.floating-cat,
+.sleeping-cat,
+.sleeping-cat-large,
+.moon-cat,
+.cat-family,
+.final-cats {
+    position: absolute;
+
+    z-index: 4;
+
+    font-family: sans-serif;
+
+    filter:
+        drop-shadow(
+            0 10px 15px rgba(0, 0, 0, 0.3)
+        );
+}
+
+
+/* bottom cats */
+
+.cat-bottom-left {
+    left: 8%;
+    bottom: 8%;
+
+    font-size: 70px;
+
+    animation: catBounce 3s ease-in-out infinite;
+}
+
+.cat-bottom-right {
+    right: 8%;
+    bottom: 7%;
+
+    font-size: 60px;
+
+    animation: catBounce 3.5s ease-in-out infinite reverse;
+}
+
+
+/* window cat */
+
+.cat-window {
+    right: 8%;
+    bottom: 18%;
+
+    font-size: 85px;
+
+    animation: catLook 4s ease-in-out infinite;
+}
+
+
+/* side cat */
+
+.cat-side {
+    left: 8%;
+    bottom: 15%;
+
+    font-size: 85px;
+
+    animation: catBounce 3s ease-in-out infinite;
+}
+
+
+/* floating cat */
+
+.floating-cat {
+    left: 9%;
+    bottom: 18%;
+
+    font-size: 90px;
+
+    animation: floatingCat 4s ease-in-out infinite;
+}
+
+
+/* sleeping cat */
+
+.sleeping-cat {
+    right: 10%;
+    bottom: 7%;
+
+    font-size: 80px;
+
+    animation: sleeping 3s ease-in-out infinite;
+}
+
+.sleeping-cat-large {
+    left: 7%;
+    bottom: 5%;
+
+    font-size: 90px;
+
+    animation: sleeping 3.5s ease-in-out infinite;
+}
+
+
+/* moon cat */
+
+.moon-cat {
+    right: 10%;
+    bottom: 18%;
+
+    font-size: 85px;
+
+    animation: catLook 4s ease-in-out infinite;
+}
+
+
+/* family */
+
+.cat-family {
+    left: 50%;
+    bottom: 7%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+    font-size: 50px;
+
+    white-space: nowrap;
+}
+
+.cat-family span {
+    animation: familyMove 3s ease-in-out infinite;
+}
+
+.cat-family span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.cat-family span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+
+/* final cats */
+
+.final-cats {
+    left: 50%;
+    bottom: 5%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+    font-size: 40px;
+
+    white-space: nowrap;
+}
+
+.cat-final {
+    animation: finalCatMove 3s ease-in-out infinite;
+}
+
+.cat-b {
+    animation-delay: 0.3s;
+}
+
+.cat-c {
+    animation-delay: 0.6s;
+}
+
+.cat-d {
+    animation-delay: 0.9s;
+}
+
+.cat-e {
+    animation-delay: 1.2s;
+}
+
+
+/* =========================================================
+   CAT ANIMATIONS
+========================================================= */
+
+@keyframes catBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes sleeping {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(4px) rotate(-3deg);
+    }
+}
+
+@keyframes floatingCat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes catLook {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+@keyframes familyMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes finalCatMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   SCREEN TRANSITION
+========================================================= */
+
+.fade-in {
+    animation: screenEnter 0.9s ease forwards;
+}
+
+@keyframes screenEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.97)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FINAL SCREEN
+========================================================= */
+
+.final-card {
+    min-height: 440px;
+}
+
+.love-message {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 22px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    color: #ff91aa;
+
+    text-shadow:
+        0 0 20px rgba(255, 120, 160, 0.25);
+
+    transform: rotate(-3deg);
+}
+
+.love-message span {
+    font-size: 38px;
+}
+
+.paw-final {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 8px;
+
+    font-size: 20px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   END BUTTON
+========================================================= */
+
+.end-btn {
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   MOBILE DESIGN
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .top-header {
+        top: 17px;
+        left: 18px;
+        right: 18px;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+
+    .progress {
+        gap: 7px;
+        font-size: 9px;
+    }
+
+    .progress-line {
+        width: 55px;
+    }
+
+    .screen {
+        padding:
+            85px 15px 30px;
+    }
+
+    .glass-card {
+        width: 94vw;
+
+        min-height: 410px;
+
+        padding: 45px 24px;
+
+        border-radius: 25px;
+    }
+
+    .label {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 47px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .message {
+        font-size: 13px;
+
+        line-height: 1.85;
+    }
+
+    .main-btn {
+        font-size: 17px;
+
+        padding: 12px 25px;
+    }
+
+    .choice-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        max-width: 230px;
+    }
+
+    .choice-btn {
+        width: 100%;
+    }
+
+    .moon {
+        width: 105px;
+        height: 105px;
+
+        right: 4%;
+        top: 9%;
+    }
+
+    .cat-bottom-left {
+        left: 2%;
+        bottom: 4%;
+
+        font-size: 45px;
+    }
+
+    .cat-bottom-right {
+        right: 2%;
+        bottom: 5%;
+
+        font-size: 40px;
+    }
+
+    .cat-window,
+    .cat-side,
+    .floating-cat,
+    .sleeping-cat,
+    .sleeping-cat-large,
+    .moon-cat {
+        font-size: 48px;
+
+        opacity: 0.8;
+    }
+
+    .cat-window {
+        right: 2%;
+        bottom: 8%;
+    }
+
+    .cat-side {
+        left: 2%;
+        bottom: 8%;
+    }
+
+    .floating-cat {
+        left: 2%;
+        bottom: 8%;
+    }
+
+    .sleeping-cat {
+        right: 2%;
+        bottom: 5%;
+    }
+
+    .sleeping-cat-large {
+        left: 2%;
+        bottom: 5%;
+    }
+
+    .moon-cat {
+        right: 3%;
+        bottom: 8%;
+    }
+
+    .cat-family {
+        font-size: 30px;
+
+        bottom: 5%;
+    }
+
+    .final-cats {
+        font-size: 27px;
+
+        bottom: 4%;
+    }
+
+    .floating-heart {
+        font-size: 19px;
+    }
+
+    .paw {
+        font-size: 14px;
+    }
+
+    .love-message {
+        font-size: 29px;
+    }
+
+    .love-message span {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-height: 700px) {
+
+    .glass-card {
+        min-height: 360px;
+
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .message {
+        font-size: 12px;
+    }
+
+    .main-btn {
+        margin-top: 20px;
+    }
+}
+/* =========================================================
+   FINAL FLOATING HEARTS
+========================================================= */
+
+.final-floating-heart {
+    position: fixed;
+
+    z-index: 100;
+
+    bottom: -30px;
+
+    color: #ff9eb5;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 15px rgba(255, 120, 160, 0.7);
+
+    animation:
+        finalHeartRise 5s ease-out forwards;
+}
+
+
+@keyframes finalHeartRise {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+    }
+
+
+    15% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-110vh)
+            scale(1.4)
+            rotate(25deg);
+    }
+
+}
+/* =========================================================
+   CUTE CSS CAT STICKERS
+========================================================= */
+
+.css-cat {
+    position: absolute;
+    z-index: 10;
+
+    width: 82px;
+    height: 70px;
+
+    background: #f4c9b8;
+
+    border-radius: 48% 48% 45% 45%;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.3),
+        inset 0 -8px 0 rgba(180, 120, 120, 0.12);
+
+    animation: cuteCatFloat 3.5s ease-in-out infinite;
+}
+
+
+/* ears */
+
+.css-cat::before,
+.css-cat::after {
+    content: "";
+
+    position: absolute;
+
+    top: -17px;
+
+    width: 34px;
+    height: 34px;
+
+    background: #f4c9b8;
+
+    transform: rotate(45deg);
+
+    border-radius: 7px 4px 7px 4px;
+
+    z-index: -1;
+}
+
+.css-cat::before {
+    left: 5px;
+}
+
+.css-cat::after {
+    right: 5px;
+}
+
+
+/* eyes */
+
+.cat-eyes {
+    position: absolute;
+
+    top: 27px;
+    left: 19px;
+
+    width: 8px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #292033;
+
+    box-shadow:
+        36px 0 #292033;
+}
+
+
+/* nose */
+
+.cat-nose {
+    position: absolute;
+
+    top: 40px;
+    left: 36px;
+
+    width: 9px;
+    height: 7px;
+
+    background: #d47f91;
+
+    border-radius: 50%;
+}
+
+
+/* mouth */
+
+.cat-mouth {
+    position: absolute;
+
+    top: 45px;
+    left: 35px;
+
+    width: 12px;
+    height: 7px;
+
+    border-bottom: 2px solid #493039;
+
+    border-radius: 0 0 50% 50%;
+}
+
+
+/* whiskers */
+
+.cat-whiskers::before,
+.cat-whiskers::after {
+    content: "";
+
+    position: absolute;
+
+    top: 43px;
+
+    width: 32px;
+    height: 1px;
+
+    background: rgba(73, 48, 57, 0.6);
+}
+
+.cat-whiskers::before {
+    left: -20px;
+
+    transform: rotate(8deg);
+
+    box-shadow:
+        0 7px rgba(73, 48, 57, 0.6);
+}
+
+.cat-whiskers::after {
+    right: -20px;
+
+    transform: rotate(-8deg);
+
+    box-shadow:
+        0 7px rgba(73, 48, 57, 0.6);
+}
+
+
+/* =========================================================
+   CAT POSITIONS
+========================================================= */
+
+.cat-one {
+    left: 8%;
+    bottom: 9%;
+}
+
+.cat-two {
+    right: 9%;
+    bottom: 11%;
+
+    animation-delay: 0.7s;
+}
+
+.cat-three {
+    left: 7%;
+    bottom: 15%;
+
+    transform: scale(1.15);
+
+    animation-delay: 1.2s;
+}
+
+.cat-four {
+    right: 8%;
+    bottom: 14%;
+
+    transform: scale(0.9);
+
+    animation-delay: 1.8s;
+}
+
+
+/* =========================================================
+   LITTLE CAT HEART
+========================================================= */
+
+.cat-heart {
+    position: absolute;
+
+    top: -28px;
+    right: -15px;
+
+    color: #ff9caf;
+
+    font-size: 22px;
+
+    animation: tinyHeartFloat 2s ease-in-out infinite;
+}
+
+
+@keyframes cuteCatFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+}
+
+
+@keyframes tinyHeartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-7px) scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   BLINKING CAT EYES
+========================================================= */
+
+.cat-eyes {
+    animation: catBlink 4s infinite;
+}
+
+@keyframes catBlink {
+
+    0%,
+    44%,
+    48%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    46% {
+        transform: scaleY(0.1);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .css-cat {
+        width: 60px;
+        height: 52px;
+    }
+
+    .css-cat::before,
+    .css-cat::after {
+        width: 26px;
+        height: 26px;
+
+        top: -13px;
+    }
+
+    .cat-eyes {
+        top: 20px;
+        left: 14px;
+
+        width: 6px;
+        height: 8px;
+
+        box-shadow:
+            27px 0 #292033;
+    }
+
+    .cat-nose {
+        top: 30px;
+        left: 27px;
+    }
+
+    .cat-mouth {
+        top: 35px;
+        left: 26px;
+    }
+
+    .cat-whiskers::before,
+    .cat-whiskers::after {
+        top: 34px;
+        width: 22px;
+    }
+
+    .cat-one {
+        left: 3%;
+        bottom: 6%;
+    }
+
+    .cat-two {
+        right: 3%;
+        bottom: 7%;
+    }
+
+    .cat-three {
+        left: 2%;
+        bottom: 8%;
+    }
+
+    .cat-four {
+        right: 2%;
+        bottom: 8%;
+    }
+
+}
+/* =========================================
+   SORRY PAGE
+========================================= */
+
+#screen6 {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating SORRY words */
+.sorry-word {
+    position: absolute;
+    z-index: 1;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    color: rgba(255, 180, 205, 0.55);
+    text-shadow: 0 0 18px rgba(255, 120, 170, 0.5);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Individual positions */
+.sorry-1 {
+    top: 8%;
+    left: 8%;
+    font-size: 32px;
+    transform: rotate(-12deg);
+    animation: sorryFloat1 4s ease-in-out infinite;
+}
+
+.sorry-2 {
+    top: 20%;
+    right: 8%;
+    font-size: 28px;
+    animation: sorryFloat2 5s ease-in-out infinite;
+}
+
+.sorry-3 {
+    top: 7%;
+    left: 40%;
+    font-size: 24px;
+    opacity: 0.45;
+    animation: sorryFloat3 4.5s ease-in-out infinite;
+}
+
+.sorry-4 {
+    bottom: 16%;
+    left: 7%;
+    font-size: 30px;
+    transform: rotate(10deg);
+    animation: sorryFloat2 5s ease-in-out infinite;
+}
+
+.sorry-5 {
+    bottom: 9%;
+    right: 10%;
+    font-size: 35px;
+    transform: rotate(-8deg);
+    animation: sorryFloat1 4.5s ease-in-out infinite;
+}
+
+.sorry-6 {
+    top: 45%;
+    left: 4%;
+    font-size: 25px;
+    animation: sorryFloat3 5s ease-in-out infinite;
+}
+
+.sorry-7 {
+    top: 47%;
+    right: 3%;
+    font-size: 25px;
+    animation: sorryFloat2 4.8s ease-in-out infinite;
+}
+
+.sorry-8 {
+    bottom: 30%;
+    left: 38%;
+    font-size: 22px;
+    opacity: 0.35;
+    animation: sorryFloat1 5.5s ease-in-out infinite;
+}
+
+
+/* Floating animations */
+@keyframes sorryFloat1 {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+@keyframes sorryFloat2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(6deg);
+    }
+
+    50% {
+        transform: translate(8px, -20px) rotate(-5deg);
+    }
+}
+
+@keyframes sorryFloat3 {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-14px) scale(1.08);
+    }
+}
+
+
+/* Main sorry card */
+.sorry-card {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Cute crying/sorry emoji */
+.sorry-icon {
+    font-size: 58px;
+    margin-bottom: 5px;
+    animation: sorryEmoji 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 180, 200, 0.5));
+}
+
+@keyframes sorryEmoji {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-7px) scale(1.08);
+    }
+}
+
+
+/* Sorry heading */
+.sorry-card h1 {
+    font-size: clamp(48px, 7vw, 76px);
+    margin: 5px 0 15px;
+    text-shadow:
+        0 0 15px rgba(255, 160, 190, 0.5),
+        0 0 35px rgba(255, 100, 160, 0.25);
+}
+
+.sorry-card h1 span {
+    display: inline-block;
+    color: #ff9fbd;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+
+/* Bottom emotional line */
+.sorry-line {
+    margin: 18px 0 24px;
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+    color: rgba(255, 220, 230, 0.8);
+}
+
+.sorry-line span {
+    color: #ff9fbd;
+    margin: 0 7px;
+}
+
+
+/* Sorry cats */
+.sorry-cat {
+    z-index: 4;
+    transform: scale(0.85);
+}
+
+.sorry-cat.cat-three {
+    left: 8%;
+    bottom: 10%;
+    animation: sorryCatLeft 4s ease-in-out infinite;
+}
+
+.sorry-cat.cat-four {
+    right: 7%;
+    bottom: 11%;
+    animation: sorryCatRight 4.5s ease-in-out infinite;
+}
+
+@keyframes sorryCatLeft {
+    0%, 100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(5deg) translateY(-15px);
+    }
+}
+
+@keyframes sorryCatRight {
+    0%, 100% {
+        transform: rotate(5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateY(-15px);
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .sorry-word {
+        opacity: 0.35;
+    }
+
+    .sorry-1 {
+        left: 3%;
+        top: 8%;
+        font-size: 24px;
+    }
+
+    .sorry-2 {
+        right: 3%;
+        top: 15%;
+        font-size: 22px;
+    }
+
+    .sorry-3 {
+        display: none;
+    }
+
+    .sorry-4 {
+        left: 2%;
+        bottom: 13%;
+        font-size: 23px;
+    }
+
+    .sorry-5 {
+        right: 3%;
+        bottom: 9%;
+        font-size: 25px;
+    }
+
+    .sorry-6,
+    .sorry-7 {
+        display: none;
+    }
+
+    .sorry-8 {
+        display: none;
+    }
+
+    .sorry-cat {
+        transform: scale(0.65);
+    }
+
+    .sorry-cat.cat-three {
+        left: -5%;
+        bottom: 5%;
+    }
+
+    .sorry-cat.cat-four {
+        right: -5%;
+        bottom: 5%;
+    }
+}
+/* =========================================
+   FINAL LOVE PAGE
+========================================= */
+
+#screen8 {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Final card */
+.final-card {
+    position: relative;
+    z-index: 10;
+}
+
+/* Paw above heading */
+.final-paw {
+    font-size: 38px;
+    margin: 5px 0;
+    animation: pawBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(255, 170, 200, 0.6));
+}
+
+@keyframes pawBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+/* Final heading */
+.final-heading {
+    font-size: clamp(48px, 7vw, 76px);
+    margin: 5px 0 15px;
+    text-shadow:
+        0 0 15px rgba(255, 150, 190, 0.6),
+        0 0 40px rgba(255, 100, 160, 0.3);
+}
+
+.final-heading span {
+    color: #ff9fbd;
+    display: inline-block;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+/* Final paragraph */
+.final-text {
+    line-height: 1.8;
+}
+
+/* Main love message */
+.love-message {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-family: "Caveat", cursive;
+}
+
+.love-message span {
+    font-size: clamp(36px, 5vw, 52px);
+    color: #ffd7e3;
+    text-shadow:
+        0 0 15px rgba(255, 160, 195, 0.8),
+        0 0 35px rgba(255, 100, 160, 0.5);
+    animation: loveGlow 2s ease-in-out infinite;
+}
+
+.love-message strong {
+    font-size: clamp(42px, 6vw, 64px);
+    color: #ff9fbd;
+    font-weight: 700;
+    text-shadow:
+        0 0 15px rgba(255, 120, 170, 0.8),
+        0 0 40px rgba(255, 80, 150, 0.5);
+    animation: billiGlow 2s ease-in-out infinite;
+}
+
+@keyframes loveGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
+}
+
+@keyframes billiGlow {
+    0%, 100% {
+        transform: scale(1) rotate(-1deg);
+    }
+
+    50% {
+        transform: scale(1.08) rotate(1deg);
+    }
+}
+
+/* Little cats underneath */
+.final-cats-text {
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+    animation: catsBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes catsBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* Floating love sparks */
+.love-spark {
+    position: absolute;
+    z-index: 2;
+    color: #ff9fbd;
+    font-size: 30px;
+    pointer-events: none;
+    text-shadow: 0 0 18px rgba(255, 100, 160, 0.8);
+    animation: loveSparkFloat 4s ease-in-out infinite;
+}
+
+.spark-1 {
+    top: 12%;
+    left: 12%;
+    font-size: 30px;
+}
+
+.spark-2 {
+    top: 20%;
+    right: 13%;
+    font-size: 22px;
+    animation-delay: .8s;
+}
+
+.spark-3 {
+    top: 45%;
+    left: 7%;
+    font-size: 20px;
+    animation-delay: 1.4s;
+}
+
+.spark-4 {
+    top: 48%;
+    right: 7%;
+    font-size: 32px;
+    animation-delay: 2s;
+}
+
+.spark-5 {
+    bottom: 15%;
+    left: 20%;
+    font-size: 24px;
+    animation-delay: .5s;
+}
+
+.spark-6 {
+    bottom: 13%;
+    right: 20%;
+    font-size: 25px;
+    animation-delay: 1.8s;
+}
+
+@keyframes loveSparkFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(-22px) scale(1.25) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+
+/* Final cats */
+.final-cat {
+    z-index: 6;
+}
+
+.final-cat-left {
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    transform: scale(.85);
+    animation: finalCatLeft 3.5s ease-in-out infinite;
+}
+
+.final-cat-right {
+    position: absolute;
+    right: 7%;
+    bottom: 13%;
+    transform: scale(.8);
+    animation: finalCatRight 4s ease-in-out infinite;
+}
+
+.final-cat-small {
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    transform: translateX(-50%) scale(.55);
+    animation: finalCatTop 3s ease-in-out infinite;
+}
+
+@keyframes finalCatLeft {
+    0%, 100% {
+        transform: scale(.85) translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(.9) translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes finalCatRight {
+    0%, 100% {
+        transform: scale(.8) translateY(0) rotate(5deg);
+    }
+
+    50% {
+        transform: scale(.85) translateY(-18px) rotate(-5deg);
+    }
+}
+
+@keyframes finalCatTop {
+    0%, 100% {
+        transform: translateX(-50%) scale(.55) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(.6) translateY(-10px);
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .final-cat-left {
+        left: -8%;
+        bottom: 8%;
+        transform: scale(.6);
+    }
+
+    .final-cat-right {
+        right: -8%;
+        bottom: 8%;
+        transform: scale(.58);
+    }
+
+    .final-cat-small {
+        top: 6%;
+        transform: translateX(-50%) scale(.4);
+    }
+
+    .spark-1 {
+        left: 4%;
+    }
+
+    .spark-2 {
+        right: 4%;
+    }
+
+    .spark-3,
+    .spark-4 {
+        display: none;
+    }
+
+    .spark-5 {
+        left: 8%;
+    }
+
+    .spark-6 {
+        right: 8%;
+    }
+
+    .final-cats-text {
+        font-size: 20px;
+    }
+}
